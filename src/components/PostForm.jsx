@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 import { PostsContext } from "../context/PostsContext";
 import { PostsContext2 } from "../context/PostsContext2";
 
@@ -6,12 +7,13 @@ const PostForm = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [category, setCategory] = useState("Category1");
+  const { currentUser } = useContext(AuthContext);
   const { addPost } = useContext(PostsContext);
   const { addPost: addPost2 } = useContext(PostsContext2);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const author = "John Doe";
+    const author = currentUser ? currentUser.email : "Anonymous";
     if (category === "Category1") {
       addPost({ author, title, text, category });
     } else if (category === "Category2") {

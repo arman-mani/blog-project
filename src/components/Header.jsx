@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import { AuthContext } from "../context/AuthContext";
 
 const Header = () => {
-  const { username, handleLogin, handleLogout } = useContext(UserContext);
-  const [inputUsername, setInputUsername] = useState("");
+  const { currentUser, userLoggedIn, signOutUser } = useContext(AuthContext);
   const location = useLocation();
 
   return (
@@ -26,16 +25,18 @@ const Header = () => {
           List
         </CustomNavLink>
         <div className="flex items-center ml-auto mt-2">
-          {username ? (
+          {userLoggedIn ? (
             <>
               <img
-                src="src\assets\Profile-Avatar-PNG.png"
+                src="src/assets/Profile-Avatar-PNG.png"
                 alt="avatar"
                 className="w-8 h-8 rounded-full mr-2"
               />
-              <p className="text-white mr-2">Logged in as {username}</p>
+              <p className="text-white mr-2">
+                Logged in as {currentUser.email}
+              </p>
               <button
-                onClick={handleLogout}
+                onClick={signOutUser}
                 className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200"
               >
                 Logout
@@ -43,26 +44,18 @@ const Header = () => {
             </>
           ) : (
             <>
-              <p className="text-transparent mr-2">Placeholder</p>
-              <input
-                type="text"
-                placeholder="Login as John Doe"
-                value={inputUsername}
-                onChange={(e) => setInputUsername(e.target.value)}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") handleLogin(inputUsername);
-                }}
-                className="text-black mr-2"
-              />
-              <button
-                onClick={() => {
-                  handleLogin(inputUsername);
-                  setInputUsername("");
-                }}
-                className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200"
+              <Link
+                to="/login"
+                className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200 mr-2"
               >
                 Login
-              </button>
+              </Link>
+              <Link
+                to="/register"
+                className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200"
+              >
+                Register
+              </Link>
             </>
           )}
         </div>

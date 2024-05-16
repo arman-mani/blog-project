@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { PostsContext } from "../context/PostsContext";
 import { PostsContext2 } from "../context/PostsContext2";
 import Post from "../components/Post";
+import { AuthContext } from "../context/AuthContext";
 
 const UserPosts = () => {
+  const { currentUser } = useContext(AuthContext);
   const {
     posts: posts1,
     deletePost: deletePost1,
@@ -16,10 +18,10 @@ const UserPosts = () => {
   } = useContext(PostsContext2);
 
   const userPosts1 = posts1.filter(
-    (post) => post.author === "John Doe" && post.category === "Category1"
+    (post) => post.author === currentUser.email && post.category === "Category1"
   );
   const userPosts2 = posts2.filter(
-    (post) => post.author === "John Doe" && post.category === "Category2"
+    (post) => post.author === currentUser.email && post.category === "Category2"
   );
 
   return (
