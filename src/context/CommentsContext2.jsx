@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
-import { AuthContext } from "./AuthContext"; //
+import { AuthContext } from "./AuthContext";
 
 export const CommentsContext2 = createContext();
 

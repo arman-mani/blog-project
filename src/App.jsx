@@ -8,7 +8,6 @@ import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header";
 import Write from "./pages/Write";
 import UserPosts from "./pages/UserPosts";
-import List from "./pages/List";
 import Home from "./pages/Home";
 import RegisterComponent from "./components/RegisterComponent";
 import LoginComponent from "./components/LoginComponent";
@@ -29,7 +28,6 @@ const App = () => {
                   <Route path="/" element={<Home />} />
                   <Route path="/register" element={<RegisterComponent />} />
                   <Route path="/login" element={<LoginComponent />} />
-                  <Route path="/list" element={<List />} />
                   <Route element={<PrivateRoutes />}>
                     <Route path="/write" element={<Write />} />
                     <Route path="/user-posts" element={<UserPosts />} />

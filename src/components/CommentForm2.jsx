@@ -1,4 +1,3 @@
-// src/components/CommentForm2.jsx
 import React, { useState } from "react";
 
 const CommentForm2 = ({ postId, addComment }) => {

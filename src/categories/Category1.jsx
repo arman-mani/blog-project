@@ -9,7 +9,7 @@ const Category1 = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full pt-4 min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-4 text-blue-500">Blog posts</h1>
+      <h1 className="text-3xl font-bold mb-8 text-blue-500">Blog posts</h1>
       {posts.map((post) => (
         <div
           key={post.id}

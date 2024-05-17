@@ -21,9 +21,6 @@ const Header = () => {
         >
           Your Posts
         </CustomNavLink>
-        <CustomNavLink to="/list" active={location.pathname === "/list"}>
-          List
-        </CustomNavLink>
         <div className="flex items-center ml-auto mt-2">
           {userLoggedIn ? (
             <>
@@ -46,13 +43,13 @@ const Header = () => {
             <>
               <Link
                 to="/login"
-                className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200 mr-2"
+                className="bg-black text-white py-1 px-2 rounded hover:bg-gray-700 transition duration-200 mr-2 font-medium"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-gray-200 text-black py-1 px-2 rounded hover:bg-gray-300 transition duration-200"
+                className="bg-white text-gray-900 py-1 px-2 rounded hover:bg-gray-200 transition duration-200 font-medium"
               >
                 Register
               </Link>
