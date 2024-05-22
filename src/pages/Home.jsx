@@ -17,7 +17,7 @@ const Home = () => {
             activeCategory === "Category1"
               ? "bg-black text-white"
               : "bg-gray-100 text-black border border-black"
-          } rounded-full px-6 py-3 mr-4`}
+          } rounded-full px-6 py-3 mr-4 mt-4`}
           onClick={() => handleCategoryChange("Category1")}
         >
           Category 1
@@ -27,7 +27,7 @@ const Home = () => {
             activeCategory === "Category2"
               ? "bg-black text-white"
               : "bg-gray-100 text-black border border-black"
-          } rounded-full px-6 py-3`}
+          } rounded-full px-6 py-3 mt-4`}
           onClick={() => handleCategoryChange("Category2")}
         >
           Category 2

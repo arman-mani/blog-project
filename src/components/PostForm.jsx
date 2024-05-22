@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { PostsContext } from "../context/PostsContext";
-import { PostsContext2 } from "../context/PostsContext2";
+import { v4 as uuidv4 } from "uuid";
 
 const PostForm = () => {
   const [title, setTitle] = useState("");
@@ -9,16 +9,11 @@ const PostForm = () => {
   const [category, setCategory] = useState("Category1");
   const { currentUser } = useContext(AuthContext);
   const { addPost } = useContext(PostsContext);
-  const { addPost: addPost2 } = useContext(PostsContext2);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const author = currentUser ? currentUser.email : "Anonymous";
-    if (category === "Category1") {
-      addPost({ author, title, text, category });
-    } else if (category === "Category2") {
-      addPost2({ author, title, text, category });
-    }
+    addPost({ id: uuidv4(), author, title, text, category });
     setTitle("");
     setText("");
   };
@@ -32,7 +27,7 @@ const PostForm = () => {
         Write your own post
       </h1>
       <label htmlFor="category" className="text-base text-gray-700">
-        Choose Category:
+        Choose Category
       </label>
       <select
         id="category"
@@ -44,7 +39,7 @@ const PostForm = () => {
         <option value="Category2">Category 2</option>
       </select>
       <label htmlFor="title" className="text-base text-gray-700">
-        Title:
+        Title
       </label>
       <input
         type="text"
@@ -56,7 +51,7 @@ const PostForm = () => {
         className="w-80 px-4 py-2 rounded border border-gray-300"
       />
       <label htmlFor="text" className="text-base text-gray-700">
-        Text:
+        Text
       </label>
       <textarea
         id="text"
@@ -68,7 +63,7 @@ const PostForm = () => {
       />
       <button
         type="submit"
-        className="px-4 py-2 rounded bg-blue-500 text-white cursor-pointer"
+        className="px-4 py-2 rounded bg-blue-500 text-white cursor-pointer hover:bg-blue-700"
       >
         Post
       </button>

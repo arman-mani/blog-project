@@ -22,21 +22,21 @@ const Post = ({ post, deletePost, updatePost }) => {
     <div className="bg-white text-black rounded-lg shadow-md p-6 mx-auto max-w-xl w-full mb-8">
       {editingPost ? (
         <div className="flex flex-col">
-          <label htmlFor="editedTitle" className="mb-2">
+          <label htmlFor={`editedTitle-${post.id}`} className="mb-2">
             Edit title:
           </label>
           <input
             type="text"
-            id="editedTitle"
+            id={`editedTitle-${post.id}`}
             value={editedTitle}
             onChange={(e) => setEditedTitle(e.target.value)}
             className="w-full px-4 py-2 mb-4 rounded border border-gray-300"
           />
-          <label htmlFor="editedText" className="mb-2">
+          <label htmlFor={`editedText-${post.id}`} className="mb-2">
             Edit text:
           </label>
           <textarea
-            id="editedText"
+            id={`editedText-${post.id}`}
             value={editedText}
             onChange={(e) => setEditedText(e.target.value)}
             className="w-full h-48 px-4 py-2 mb-4 rounded border border-gray-300"
@@ -44,13 +44,13 @@ const Post = ({ post, deletePost, updatePost }) => {
           <div className="flex">
             <button
               onClick={handleSave}
-              className="px-2 py-2 bg-green-500 text-white rounded cursor-pointer w-20 mr-2"
+              className="px-2 py-2 bg-green-500 text-white rounded cursor-pointer w-20 mr-2 hover:bg-green-700"
             >
               Save
             </button>
             <button
               onClick={() => setEditingPost(false)}
-              className="px-2 py-2 bg-gray-500 text-white rounded cursor-pointer"
+              className="px-2 py-2 bg-gray-500 text-white rounded cursor-pointer hover:bg-gray-700"
             >
               Cancel
             </button>
@@ -63,13 +63,13 @@ const Post = ({ post, deletePost, updatePost }) => {
           <div className="flex">
             <button
               onClick={handleEdit}
-              className="px-2 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 mb-2 mr-2"
+              className="px-2 py-2 bg-blue-500 text-white rounded cursor-pointer mt-4 mb-2 mr-2 hover:bg-blue-700"
             >
               Edit
             </button>
             <button
               onClick={handleDelete}
-              className="px-2 py-2 bg-red-500 text-white rounded cursor-pointer mt-4 mb-2"
+              className="px-2 py-2 bg-red-500 text-white rounded cursor-pointer mt-4 mb-2 hover:bg-red-700"
             >
               Delete
             </button>

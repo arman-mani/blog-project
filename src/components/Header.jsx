@@ -43,13 +43,13 @@ const Header = () => {
             <>
               <Link
                 to="/login"
-                className="bg-black text-white py-1 px-2 rounded hover:bg-gray-700 transition duration-200 mr-2 font-medium"
+                className="bg-gray-300 text-gray-900 py-1 px-2 rounded hover:bg-gray-400 transition duration-200 mr-2 font-medium"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-white text-gray-900 py-1 px-2 rounded hover:bg-gray-200 transition duration-200 font-medium"
+                className="text-gray-900 hover:text-gray-700 py-1 px-2 border border-gray-900 rounded transition duration-200 font-medium"
               >
                 Register
               </Link>
