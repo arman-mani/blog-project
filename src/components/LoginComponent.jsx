@@ -71,7 +71,7 @@ const LoginComponent = () => {
               type="submit"
               className="mt-4 w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
             >
-              Log in
+              Login
             </button>
           </div>
         </form>

@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.underline-spacing {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: 1px;
+    text-decoration-color: black;
+  }

@@ -15,9 +15,9 @@ const Home = () => {
         <button
           className={`${
             activeCategory === "Category1"
-              ? "bg-black text-white"
-              : "bg-gray-100 text-black border border-black"
-          } rounded-full px-6 py-3 mr-4 mt-4`}
+              ? "underline-spacing text-black"
+              : "text-black"
+          }  px-4 py-3  mt-2`}
           onClick={() => handleCategoryChange("Category1")}
         >
           Category 1
@@ -25,9 +25,9 @@ const Home = () => {
         <button
           className={`${
             activeCategory === "Category2"
-              ? "bg-black text-white"
-              : "bg-gray-100 text-black border border-black"
-          } rounded-full px-6 py-3 mt-4`}
+              ? "underline-spacing text-black"
+              : "text-black"
+          }  px-4 py-3 mt-2`}
           onClick={() => handleCategoryChange("Category2")}
         >
           Category 2
