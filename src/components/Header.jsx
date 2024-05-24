@@ -23,7 +23,7 @@ const Header = () => {
         </CustomNavLink>
         <div className="flex items-center ml-auto mt-2 space-x-2 flex-wrap">
           {userLoggedIn ? (
-            <>
+            <div className="flex items-center">
               <p className="text-white mr-2 md:block hidden">
                 Logged in as {currentUser.email}
               </p>
@@ -33,7 +33,7 @@ const Header = () => {
               >
                 Logout
               </button>
-            </>
+            </div>
           ) : (
             <>
               <Link
