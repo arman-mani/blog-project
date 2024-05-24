@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-center items-center h-16 bg-blue-500 fixed w-full top-0 z-50">
-      <nav className="flex justify-between w-1/2">
+      <nav className="flex justify-between w-full md:w-1/2 px-4 md:px-0">
         <CustomNavLink to="/" active={location.pathname === "/"}>
           Home
         </CustomNavLink>
@@ -21,15 +21,10 @@ const Header = () => {
         >
           Your Posts
         </CustomNavLink>
-        <div className="flex items-center ml-auto mt-2">
+        <div className="flex items-center ml-auto mt-2 space-x-2 flex-wrap">
           {userLoggedIn ? (
             <>
-              <img
-                src="src/assets/Profile-Avatar-PNG.png"
-                alt="avatar"
-                className="w-8 h-8 rounded-full mr-2"
-              />
-              <p className="text-white mr-2">
+              <p className="text-white mr-2 md:block hidden">
                 Logged in as {currentUser.email}
               </p>
               <button
